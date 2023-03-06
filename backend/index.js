@@ -18,9 +18,15 @@ app.get("/", (req, res) => {
     console.log(req.body);
     res.send("get received");
 });
+app.get("/cliente/:id", ClientController.show);
+app.get("/clientes", ClientController.index);
 
 app.post("/cadastro/cliente", ClientController.store);
-app.get("/clientes", ClientController.index);
+
+app.put("/cliente/:id", ClientController.update);
+
+app.delete("/cliente/:id", ClientController.destroy)
+
 
 app.listen(PORT, () => console.log("Server is running on port 6969"))
 connectDB();
