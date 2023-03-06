@@ -17,7 +17,7 @@
             <button type="submit" @click.prevent="atualizarBanco()">Cadastrar</button>
         </form>
     </div>
-</template>
+</template>c
 
 <script>
 
@@ -26,10 +26,10 @@ export default{
     methods:{
         atualizarBanco(){
             if(this.cadastro.password == this.cadastro.confirmPassword){
-                console.log("ERRO !");
+                //enviar
             }
             else{
-                //enviar
+                console.log("ERRO !");
             }
             console.log(this.cadastro);
         }
@@ -55,6 +55,9 @@ export default{
     }
     input{
         border-radius: 5%;
+    }
+    span{
+        color: red;
     }
 
 </style>
