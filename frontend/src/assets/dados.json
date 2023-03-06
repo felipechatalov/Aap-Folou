@@ -1,8 +1,7 @@
 {
-    "nome": "João da Silva",
-    "email": "joao.silva@gmail.com",
-    "cpf": 12341,
-    "telefone": 123456789
-
-  }
-  
+  "name": "João da Silva",
+  "password": "CassioRamos12",
+  "email": "joao.silva@gmail.com",
+  "cpf": 12341,
+  "phone": 123456789
+}
