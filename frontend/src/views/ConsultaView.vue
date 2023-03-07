@@ -15,7 +15,6 @@
           <label for="phone">Telefone:</label>
           <p>{{ user.phone }}</p>
         </div>
-        <button type="submit">Editar</button>
       </form>
     </div>
   </template>
