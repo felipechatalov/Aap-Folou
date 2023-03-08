@@ -55,8 +55,9 @@ export default{
         color: black;
     }
     input{
-        border-radius: 1%;
+        border-radius: 10px;
         size: 100px;
+        padding: 5px;
     }
     span{
         color: red;
@@ -64,7 +65,7 @@ export default{
 
     button{
         border-radius: 10px;
-        padding: 10px;
+        padding: 5px;
         margin-top: 15px;
         border: 100px;
         
