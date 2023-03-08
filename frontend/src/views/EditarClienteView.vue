@@ -1,7 +1,7 @@
 <template>
     <div>
         <ConsultaView/>
-        <v-btn variant="outlined" color="error">Editar</v-btn>
+        <button @click="trocarpag">Editar</button>
     </div>
 </template>
 
