@@ -51,13 +51,24 @@ export default{
 
 <style scoped>
     label{
+        font-size: medium;
         color: black;
     }
     input{
-        border-radius: 5%;
+        border-radius: 10px;
+        size: 100px;
+        padding: 5px;
     }
     span{
         color: red;
+    }
+
+    button{
+        border-radius: 10px;
+        padding: 5px;
+        margin-top: 15px;
+        border: 100px;
+        
     }
 
 </style>
