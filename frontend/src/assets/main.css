@@ -9,6 +9,9 @@
 
 input {
   background-color: #b99c65d0;
+  border-radius: 10px;
+  size: 100px;
+  padding: 5px;
 }
 
 .container {
@@ -22,8 +25,16 @@ p {
   color: #000;
 }
 
-h2 {
+h1 {
   color: #000;
+  display: flex;
+  justify-content: center;
+}
+
+div{
+  /* background-color: #574331; */
+  border-radius: 10px;
+  padding: 6px;
 }
 
 form {
@@ -44,24 +55,16 @@ form>div>label {
 }
 
 form>button {
+  display: flex;
   border-radius: 10px;
   padding: 5px;
   background-color: #7a653ee8;
-  color: #000000;
   font-weight: bold;
+  margin-top: 15px;
+  border: 100px;
+  color: #000;
 }
 
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
 
 @media (min-width: 1024px) {
   body {
