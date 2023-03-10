@@ -42,12 +42,12 @@ export default{
 
 <style scoped>
 
-    button{
-        border-radius: 10px;
-        padding: 5px;
-        margin-top: 15px;
-        border: 100px;
-        
+    label{
+        font-size: medium;
+        color: black;
     }
-
+    
+    span{
+        color: red;
+    }
 </style>

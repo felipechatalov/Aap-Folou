@@ -1,20 +1,19 @@
 <template>
     <form @submit.prevent="">
-        <Auxiliar/>
+        <div>
+            <!-- Voltaremosss !!!!! -->
+        </div>
     </form>
 </template>
 
 <script>
-import Auxiliar from './Auxiliar.vue';
 export default{
     data(){
         return{
 
         }
     },
-    components:{
-        Auxiliar
-    }
+
 }
 
 </script>

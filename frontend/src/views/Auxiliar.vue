@@ -19,21 +19,18 @@
 
 <script>
     export default{
-        data() {
-            return {
-                cadastro: {
-                name: "",
-                password: "",
-                confirmPassword: "",
-                email: "",
-                cpf: "",
-                phone: ""
-                }
+        props: {
+            cadastro: {
+            type: Object,
+            default: () => ({ name: '', password: '', email: '', cpf: '', phone: '' })
             }
         },
-        props:{
-            cadastro2:{}
-        }
+        data() {
+            return {
+                compCadastro: { ...this.cadastro },
+                editando: false
+            }
+        },
     }    
 </script>
 

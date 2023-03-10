@@ -1,7 +1,7 @@
 <template>
-    <div class="container">
-      <h1>Dados do usuário</h1>
-      <form @submit.prevent="submitForm">
+    <div>
+        <h1>Dados do Petshop</h1>
+        <form>
         <div>
           <label for="name">Nome:</label>
           <p>{{ user.name }}</p>
@@ -10,19 +10,17 @@
           <p v-else>*********</p>          
           <label for="email">Email:</label>
           <p>{{ user.email }}</p>
-          <label for="cpf">CPF:</label>
+          <label for="CNPJ">CNPJ:</label>
           <p>{{ user.cpf }}</p>
           <label for="phone">Telefone:</label>
           <p>{{ user.phone }}</p>
         </div>
-        <button><RouterLink to="/editarC">Editar</RouterLink></button>
-      </form>
+        </form>
     </div>
-  </template>
+</template>
 
 <script>
 import dados from "@/assets/dados.json";
-
 export default {
   data() {
     return {
@@ -36,4 +34,3 @@ export default {
   },
 };
 </script>
-
