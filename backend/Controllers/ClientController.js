@@ -2,28 +2,81 @@ import ClientModel from "../Models/ClientModel.js"
 
 class ClientController {
     async store(req, res){
-        const CreatedClient = await ClientModel.create(req.body);
-        console.log("Client created: " + CreatedClient)
-        return res.status(200).json(CreatedClient);
+        // TODO: validade data from req.body
+        const { name, email, cpf, phone } = req.body;
+
+        try {
+
+            let ClientAlreadyExists = await ClientModel.findOne({ email: email });
+            if (ClientAlreadyExists) return res.status(400).json({ message: "Email already registered" });
+
+            ClientAlreadyExists = await ClientModel.findOne({ cpf: cpf });
+            if (ClientAlreadyExists) return res.status(400).json({ message: "CPF already registered" });
+
+            ClientAlreadyExists = await ClientModel.findOne({ phone: phone })
+            if (ClientAlreadyExists) return res.status(400).json({ message: "Phone already registered" });
+
+            const CreatedClient = await ClientModel.create(req.body);
+            console.log("Client created: " + CreatedClient)
+            return res.status(200).json(CreatedClient);
+
+        } catch (error) {
+            return res.status(404).json({ message: "Verify client data" });
+        }
+
     }
 
     async index(req, res){
-        const products = await ClientModel.find();
-
-        return res.status(200).json(products);
+        try {
+            const Clients = await ClientModel.find();
+            return res.status(200).json(Clients);
+        } catch (error) {
+            return res.status(404).json({ message: "No clients found" });
+        }
     }
 
     async show(req, res){
-        
+        try {
+            const { id } = req.params;
+            const clients = await ClientModel.findById(id);
+
+            if (!clients) return res.status(404).json({ message: "Client not found" });
+            
+            return res.status(200).json(clients);
+            
+        } catch (error) {
+            return res.status(404).json({ message: "Verify client ID" });
+        }
     }
 
     async update(req, res){
-            
+        // TODO: validate data from req.body
+        try {
+            const { id } = req.params;
+
+            const ClientUpdated = await ClientModel.findByIdAndUpdate(id, req.body);
+            if (!ClientUpdated) return res.status(404).json({ message: "Client not found" });
+
+            return res.status(200).json({ message: "Client updated" });
+
+        } catch (error) {
+            return res.status(404).json({ message: "Verify client ID" });
+        }
     }
 
     async destroy(req, res){
-        const { id } = req.params;
-        
+        try {
+            const { id } = req.params;
+
+            const ClientDeleted = await ClientModel.findByIdAndDelete(id);
+
+            if (!ClientDeleted) return res.status(404).json({ message: "Client not found" });
+
+            return res.status(200).json({ message: "Client deleted" });
+
+        } catch (error) {
+            return res.status(404).json({ message: "Verify client ID" });
+        }
     }
 } 
 
