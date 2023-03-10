@@ -5,11 +5,14 @@ import CadastroClienteView from '../views/CadastroClienteView.vue'
 import ConsultaPetView from '../views/ConsultaPetView.vue'
 import EditarCliente from '../views/EditarCliente.vue'
 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+
       path: '/consulta/cliente',
+
       name: 'Consulta',
       component: ConsultaView
     },
@@ -24,6 +27,7 @@ const router = createRouter({
       component: ConsultaPetView
     },
     {
+
       path: '/editar/cliente',
       name: 'Editar',
       component: EditarCliente

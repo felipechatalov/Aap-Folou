@@ -21,6 +21,7 @@
 
 <script>
 import dados from "@/assets/dados.json";
+
 export default {
   data() {
     return {
@@ -33,4 +34,5 @@ export default {
     console.log(this.user.name);
   },
 };
+
 </script>

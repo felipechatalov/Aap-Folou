@@ -61,8 +61,9 @@ export default{
         font-size: medium;
         color: black;
     }
-    
+
     span{
         color: red;
     }
+
 </style>
