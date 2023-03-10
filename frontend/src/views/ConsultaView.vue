@@ -15,8 +15,8 @@
           <label for="phone">Telefone:</label>
           <p>{{ user.phone }}</p>
         </div>
-        <button><RouterLink to="/editarC">Editar</RouterLink></button>
       </form>
+      <button><RouterLink to="/editar/cliente">Editar</RouterLink></button>
     </div>
   </template>
 

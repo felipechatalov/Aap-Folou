@@ -56,13 +56,14 @@ form>div>label {
 
 form>button {
   display: flex;
+  justify-content: center;
   border-radius: 10px;
   padding: 5px;
   background-color: #7a653ee8;
   font-weight: bold;
   margin-top: 15px;
   border: 100px;
-  color: #000;
+  color: #0000;
 }
 
 @media (min-width: 1024px) {

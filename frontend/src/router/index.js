@@ -9,22 +9,22 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/consultaCliente',
+      path: '/consulta/cliente',
       name: 'Consulta',
       component: ConsultaView
     },
     {
-      path: '/cadastrocliente',
+      path: '/cadastro/cliente',
       name: 'Cadastro',
       component: CadastroClienteView
     },
     {
-      path: '/consultaPet',
+      path: '/consulta/petshop',
       name: 'ConsultarPet',
       component: ConsultaPetView
     },
     {
-      path: '/editarC',
+      path: '/editar/cliente',
       name: 'Editar',
       component: EditarCliente
     },

@@ -1,13 +1,14 @@
 <template>
-    <div class="formulario">
+    <div class="container">
         <form>
             <Auxiliar :cadastro="cadastro"/>
-            <button type="submit" @click.prevent="atualizarBanco()">Cadastrar</button>
+            <button type="submit" @click.prevent="enviarCadastro()">Cadastrar</button>
         </form>
     </div>
 </template>c
 
 <script>
+import axios from 'axios';
 import Auxiliar from './Auxiliar.vue';
 
 
@@ -15,14 +16,28 @@ export default{
     name: "CadastroCliente",
     components: { Auxiliar },
     methods: {
-        atualizarBanco() {
+        enviarCadastro() {
             if (this.cadastro.password == this.cadastro.confirmPassword) {
-                console.log(this.cadastro.name);
-            }
+                const dados = {
+                    nome: this.cadastro.nome,
+                    password: this.cadastro.password,
+                    email: this.cadastro.email,
+                    cpf: this.cadastro.cpf,
+                    phone: this.cadastro.phone
+                };
+
+                axios.post('/api/cadastro/cliente',dados)
+                    .then(response => {
+                        console.log('Cadastro realizado com sucesso');
+                    })
+                    .catch(error => {
+                        console.log('Ocorreu um erro ao realizar o cadastro:', error);
+                    });
+            }          
             else {
                 console.log("ERRO !");
             }
-            console.log(this.cadastro);
+
         }
     },
     data() {
