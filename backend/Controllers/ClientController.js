@@ -3,30 +3,39 @@ import ClientModel from "../Models/ClientModel.js"
 class ClientController {
     async store(req, res){
         // TODO: validade data from req.body
-        // TODO: check if client already exists
-        // TODO: everything inside try catch
-        // TODO: check if client has same email or cpf already registered
         const { name, email, cpf, phone } = req.body;
 
-        ClientlreadyExists = await ClientModel.findOne({ email: email });
+        try {
 
-        if (ClientlreadyExists) return res.status(400).json({ message: "Email already registered" });
+            let ClientAlreadyExists = await ClientModel.findOne({ email: email });
+            if (ClientAlreadyExists) return res.status(400).json({ message: "Email already registered" });
 
-        const CreatedClient = await ClientModel.create(req.body);
-        console.log("Client created: " + CreatedClient)
-        return res.status(200).json(CreatedClient);
+            ClientAlreadyExists = await ClientModel.findOne({ cpf: cpf });
+            if (ClientAlreadyExists) return res.status(400).json({ message: "CPF already registered" });
+
+            ClientAlreadyExists = await ClientModel.findOne({ phone: phone })
+            if (ClientAlreadyExists) return res.status(400).json({ message: "Phone already registered" });
+
+            const CreatedClient = await ClientModel.create(req.body);
+            console.log("Client created: " + CreatedClient)
+            return res.status(200).json(CreatedClient);
+
+        } catch (error) {
+            return res.status(404).json({ message: "Verify client data" });
+        }
+
     }
 
     async index(req, res){
-        // TODO: check if there are clients
-        // TODO: everything inside try catch
-        const products = await ClientModel.find();
-
-        return res.status(200).json(products);
+        try {
+            const Clients = await ClientModel.find();
+            return res.status(200).json(Clients);
+        } catch (error) {
+            return res.status(404).json({ message: "No clients found" });
+        }
     }
 
     async show(req, res){
-        
         try {
             const { id } = req.params;
             const clients = await ClientModel.findById(id);
@@ -41,15 +50,11 @@ class ClientController {
     }
 
     async update(req, res){
-        // TODO: check if client exists
         // TODO: validate data from req.body
-        // TODO: ensure that client has same email or cpf already registered
         try {
-
             const { id } = req.params;
 
             const ClientUpdated = await ClientModel.findByIdAndUpdate(id, req.body);
-
             if (!ClientUpdated) return res.status(404).json({ message: "Client not found" });
 
             return res.status(200).json({ message: "Client updated" });
@@ -60,7 +65,6 @@ class ClientController {
     }
 
     async destroy(req, res){
-        
         try {
             const { id } = req.params;
 
