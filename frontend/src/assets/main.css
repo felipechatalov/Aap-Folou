@@ -61,9 +61,8 @@ form>button {
   font-weight: bold;
   margin-top: 15px;
   border: 100px;
-  color: #000;
+  color: #0000;
 }
-
 
 @media (min-width: 1024px) {
   body {

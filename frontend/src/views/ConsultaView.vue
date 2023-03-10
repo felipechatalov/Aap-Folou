@@ -16,6 +16,7 @@
           <p>{{ user.phone }}</p>
         </div>
       </form>
+      <button><RouterLink to="/editar/cliente">Editar</RouterLink></button>
     </div>
   </template>
 

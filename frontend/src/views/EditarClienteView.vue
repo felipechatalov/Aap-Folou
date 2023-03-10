@@ -1,19 +1,3 @@
-<template>
-    <div>
-        <ConsultaView/>
-        <v-btn variant="outlined" color="error">Editar</v-btn>
-    </div>
-</template>
-
-<script>
-
-import ConsultaView from './ConsultaView.vue';
-export default{
-    components:{
-        ConsultaView
-    }
-}
-</script>
 
 <style>
     button{
