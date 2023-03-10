@@ -15,7 +15,7 @@ export default{
 }
 </script>
 
-<style scoped>
+<style>
     button{
         display: flex;
         margin: auto;
