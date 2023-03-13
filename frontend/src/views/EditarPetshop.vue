@@ -3,15 +3,15 @@
         <form action="container">
             <label for="nome"  placeholder="{{ dados.nome }}">Nome:</label>
             <input type="text" v-model="novos_dados.nome">
-            <label for="password"  placeholder="oi">Senha:</label>
+            <label for="password"  placeholder="**********">Senha:</label>
             <input type="text" v-model="novos_dados.password">
             <label for="confirm_password">Confirmar Senha:</label>
             <input type="text" v-model="confirm_password">
             <span v-if="novos_dados.password !== confirm_password">As senhas não conferem</span>
             <label for="email"  placeholder="{{ dados.email }}">Email:</label>
             <input type="email" v-model="novos_dados.email">
-            <label for="cpf"  placeholder="{{ dados.cpf }}">CPF:</label>
-            <input type="text" v-model="novos_dados.cpf">
+            <label for="cnpj"  placeholder="{{ dados.cnpj }}">CNPJ:</label>
+            <input type="text" v-model="novos_dados.cnpj">
             <label for="phone"  placeholder="{{ dados.phone }}">Telefone:</label>
             <input type="text" v-model="novos_dados.phone">
             <div class="botao">
@@ -36,19 +36,19 @@
         },
         methods:{
             editarDados(){
-                axios.put('/api/cliente/1', this.novos_dados)
+                axios.put('/api/petshop/1', this.novos_dados)
                     .then(response =>{
                         console.log("Atualizado !", response);
                         const aux = this.novos_dados
                         this.dados = aux
-                        this.$router.push('/consulta/cliente')
+                        this.$router.push('/consulta/petshop')
                     })
                     .catch(error =>{
                         console.log("ERRO !"+ error);
                     })
             },
             pegarDados(){
-                axios.get('/api/cliente/1')
+                axios.get('/api/petshop/1')
                     .then(response =>{
                         const aux = response
                         this.dados = aux
@@ -60,6 +60,7 @@
             cancelar(){
                 this.$router.push('/consulta/petshop')
             }
+
         }
     }
 </script>

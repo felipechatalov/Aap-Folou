@@ -4,6 +4,7 @@ import ConsultaView from '../views/ConsultaView.vue'
 import CadastroClienteView from '../views/CadastroClienteView.vue'
 import ConsultaPetView from '../views/ConsultaPetView.vue'
 import EditarCliente from '../views/EditarCliente.vue'
+import EditarPetshop from '../views/EditarPetshop.vue'
 
 
 const router = createRouter({
@@ -27,11 +28,15 @@ const router = createRouter({
       component: ConsultaPetView
     },
     {
-
       path: '/editar/cliente',
-      name: 'Editar',
+      name: 'EditarCliente',
       component: EditarCliente
     },
+    {
+      path: '/editar/petshop',
+      name: 'EditarPetshop',
+      component: EditarPetshop
+    }
 
   ]
 })
