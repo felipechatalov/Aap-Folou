@@ -1,7 +1,7 @@
 <template>
     <div>
         <form action="container">
-            <label for="nome">Nome:</label>
+            <label for="nome">Nome do Petshop:</label>
             <input type="text" v-model="novos_dados.name" :placeholder="dados.name">
             <label for="password">Senha:</label>
             <input type="text" v-model="novos_dados.password" placeholder="**********">
