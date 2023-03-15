@@ -55,8 +55,7 @@ export default{
 }
 </script>
 
-<style scoped>
-
+<style>
     label{
         font-size: medium;
         color: black;
