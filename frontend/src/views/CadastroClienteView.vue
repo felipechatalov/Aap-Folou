@@ -28,7 +28,7 @@ export default{
 
                 axios.post('/api/cadastro/cliente',dados)
                     .then(response => {
-                        console.log('Cadastro realizado com sucesso');
+                        console.log('Cadastro realizado com sucesso',response);
                     })
                     .catch(error => {
                         console.log('Ocorreu um erro ao realizar o cadastro:', error);

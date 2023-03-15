@@ -1,7 +1,7 @@
 <template>
     <div>
         <label for="name">Nome:</label>
-        <input type="text" v-model="cadastro.name" placeholder="Digite o seu Nome">
+        <input type="text" v-model="cadastro.name">
         <label for="password">Senha:</label>
         <input type="text" v-model="cadastro.password">
         <label for="confirmPassword">Confirmar Senha:</label>
