@@ -68,6 +68,94 @@ form>div>button {
   color: black;
 }
 
+.cadastro .aafolou{
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+  width: 250px;
+}
+
+.cadastro .logar{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cadastro .logar .links,
+.cadastro .logar .registro_pet{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+
+.cadastro .logar .links a,
+.cadastro .logar .registro_pet a {
+  text-decoration: none;
+  color: #3E2723;
+  font-weight: 700;
+  transition: text-decoration 0.2s;
+  padding-bottom: 3px;
+}
+
+.cadastro .logar .links a:hover,
+.cadastro .logar .registro_pet a:hover {
+  text-decoration: underline;
+}
+
+.cadastro .logar .btn_login{
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  font-size: large;
+}
+
+.cadastro .logar .btn_login img {
+  width: 60px;
+}
+
+.titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  padding-bottom: 40px;
+}
+
+.titulo img {
+  padding-left: 10px;
+}
+
+footer p{
+  padding: 36px 0;
+  color: black;
+}
+
+.pesquisar_conta{
+  background-color: #73522f;
+  max-height: 1200px;
+}
+.pesquisar_conta .esqueci .input,
+.pesquisar_conta .esqueci .label{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: auto;
+}
+
+.pesquisar_conta .esqueci .buttons{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: end;
+  align-items: center;
+  border-radius: 10px;
+  width: 100px;
+  background-color: #7a653ee8;
+}
+
 @media (min-width: 1024px) {
   body {
     display: flex;

@@ -6,6 +6,8 @@ import ConsultaPetView from '../views/ConsultaPetView.vue'
 import EditarCliente from '../views/EditarCliente.vue'
 import EditarPetshop from '../views/EditarPetshop.vue'
 import CadastroPet from '../views/CadastroPet.vue'
+import Login from '../views/Login.vue'
+import EsqueciSenha from '../views/EsqueciSenha.vue'
 
 
 const router = createRouter({
@@ -42,6 +44,16 @@ const router = createRouter({
       path: '/cadastro/pet',
       name: 'CadastroPet',
       component: CadastroPet
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
+    {
+      path: '/esqueci/senha',
+      name: 'EsqueciSenha',
+      component: EsqueciSenha
     }
 
 
