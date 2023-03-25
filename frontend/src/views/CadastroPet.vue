@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h1 class="titulo">Cadastro Pet<img src="../components/icons/petshop.png" alt=""></h1>
         <form>
                 <label for="name">Nome:</label>
                 <input type="text" v-model="cadastro.name">

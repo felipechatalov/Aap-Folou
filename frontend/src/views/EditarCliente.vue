@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h1 class="titulo">Editar Cliente</h1>
         <form action="container">
             <label for="nome" >Nome:</label>
             <input type="text" v-model="novos_dados.nome" :placeholder="dados.name">

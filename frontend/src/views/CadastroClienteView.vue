@@ -1,8 +1,9 @@
 <template>
     <div class="container">
+        <h1 class="titulo">Cadastro Cliente <img src="../components/icons/cliente.png" alt="cliente"></h1>
         <form>
             <Auxiliar :cadastro="cadastro"/>
-            <button type="submit" @click.prevent="enviarCadastro()">Cadastrar</button>
+            <button class="submit" type="submit" @click.prevent="enviarCadastro()">Cadastrar</button>
         </form>
     </div>
 </template>c
