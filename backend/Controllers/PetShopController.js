@@ -29,15 +29,18 @@ class PetShopController {
 
     async show(req, res){
         try {
-            const { id } = req.params;
-            const PetShop = await PetShopModel.findById(id);
-
+            const { email, password } = req.params;
+            
+            const PetShop = await PetShopModel.findOne(email);
             if (!PetShop) return res.status(404).json({ message: "PetShop not found" });
             
+
+            if (PetShop.password !== password) return res.status(404).json({ message: "Wrong password"});
+
             return res.status(200).json(PetShop);
             
         } catch (error) {
-            return res.status(404).json({ message: "Verify PetShop ID" });
+            return res.status(404).json({ message: "Verify client ID" });
         }
     }
 

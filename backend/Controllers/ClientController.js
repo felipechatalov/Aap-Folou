@@ -37,16 +37,20 @@ class ClientController {
 
     async show(req, res){
         try {
-            const { id } = req.params;
-            const clients = await ClientModel.findById(id);
-
-            if (!clients) return res.status(404).json({ message: "Client not found" });
+            const { email, password } = req.params;
             
-            return res.status(200).json(clients);
+            const client = await ClientModel.findOne(email);
+            if (!client) return res.status(404).json({ message: "Client not found" });
+            
+
+            if (client.password !== password) return res.status(404).json({ message: "Wrong password"});
+
+            return res.status(200).json(client);
             
         } catch (error) {
             return res.status(404).json({ message: "Verify client ID" });
         }
+        
     }
 
     async update(req, res){
