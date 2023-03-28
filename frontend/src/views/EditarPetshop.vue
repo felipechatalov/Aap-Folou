@@ -18,6 +18,7 @@
             <div class="botao">
                 <button @click.prevent="cancelar()">Cancelar</button>
                 <button @submit.prevent="editarDados()">Salvar</button>
+                <button>Excluir conta</button>
             </div>
         </form>
     </div>
