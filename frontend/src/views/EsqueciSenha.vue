@@ -6,7 +6,7 @@
             <input class="input" type="text" v-model="email">
             <div class="buttons">
                 <button @click.prevent="voltarLogin()">Cancelar</button>
-                <button class="salvar" @click.prevent="pesquisarConta()">Pesquisar</button>
+                <button @click.prevent="pesquisarConta()">Pesquisar</button>
             </div>
         </div>
     </div>

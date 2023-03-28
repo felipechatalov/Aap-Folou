@@ -134,26 +134,37 @@ footer p{
 }
 
 .pesquisar_conta{
-  background-color: #73522f;
+  background-color: #6d553c;
   max-height: 1200px;
 }
-.pesquisar_conta .esqueci .input,
+
 .pesquisar_conta .esqueci .label{
   display: flex;
-  flex-direction: column;
   align-items: center;
   max-width: auto;
 }
 
-.pesquisar_conta .esqueci .buttons{
+.pesquisar_conta .esqueci .input{
+  width: 300px;
+}
+
+.esqueci {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  justify-content: end;
   align-items: center;
+}
+
+.buttons button{
+  display: flex;
+  justify-content: center;
   border-radius: 10px;
-  width: 100px;
+  padding: 5px;
   background-color: #7a653ee8;
+  font-weight: bold;
+  margin-top: 15px;
+  border: 100px;
+  color: black;
+  width: 100px;
 }
 
 @media (min-width: 1024px) {
