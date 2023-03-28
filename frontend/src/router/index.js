@@ -8,6 +8,7 @@ import EditarPetshop from '../views/EditarPetshop.vue'
 import CadastroPet from '../views/CadastroPet.vue'
 import Login from '../views/Login.vue'
 import EsqueciSenha from '../views/EsqueciSenha.vue'
+import Home from '../views/Home.vue'
 
 
 const router = createRouter({
@@ -54,8 +55,12 @@ const router = createRouter({
       path: '/esqueci/senha',
       name: 'EsqueciSenha',
       component: EsqueciSenha
+    },
+    {
+      path: '/',
+      name: 'Home',
+      component: Home
     }
-
 
   ]
 })
