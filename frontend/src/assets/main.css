@@ -1,9 +1,9 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
+  max-width: 1280px ;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   font-weight: normal;
 }
 
@@ -165,6 +165,31 @@ footer p{
   border: 100px;
   color: black;
   width: 100px;
+}
+
+#nav{
+  background-color:#6d553c;
+  border-bottom: 4px solid #111;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100vw;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+#logo-url{
+  margin: auto;
+  margin-left: 0;
+}
+
+#router1,
+#router2{
+  text-decoration: none;
+  color: #3E2723;
+  font-weight: 700;
+  transition: text-decoration 0.2s;
+  padding-bottom: 3px;
 }
 
 @media (min-width: 1024px) {
