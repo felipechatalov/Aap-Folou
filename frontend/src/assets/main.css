@@ -174,7 +174,7 @@ footer p{
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 100vw;
+  /* width: 100vw; */
   gap: 15px;
   margin-bottom: 20px;
 }
@@ -200,6 +200,6 @@ footer p{
 
   #app {
     grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+    /* padding: 0 2rem; */
   }
 }
