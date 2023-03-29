@@ -52,7 +52,7 @@
 
 *,
 *::before,
-*::after {
+*::after{
   box-sizing: border-box;
   margin: 0;
   position: relative;
@@ -60,7 +60,7 @@
 }
 
 body {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   color: var(--color-text);
   background-color: rgba(121, 99, 68, 0.836);
   transition: color 0.5s, background-color 0.5s;
