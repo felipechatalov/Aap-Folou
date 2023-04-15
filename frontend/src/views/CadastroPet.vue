@@ -15,6 +15,8 @@
                 <input type="text" v-model="cadastro.cpf">
                 <label for="phone">Telefone:</label>
                 <input type="text" v-model="cadastro.phone">
+                <label for="address">Endereço:</label>
+                <input type="text" v-model="cadastro.address">
                 <button type="submit" @click.prevent="enviarCadastro()">Cadastrar</button>
         </form>
     </div>
@@ -53,23 +55,28 @@ export default{
         enviarCadastro() {
             if (this.cadastro.password == this.cadastro.confirmPassword) {
                 const dados = {
-                    nome: this.cadastro.nome,
+                    name: this.cadastro.name,
                     password: this.cadastro.password,
                     email: this.cadastro.email,
-                    cpf: this.cadastro.cpf,
-                    phone: this.cadastro.phone
+                    cnpj: this.cadastro.cnpj,
+                    phone: this.cadastro.phone,
+                    address: this.cadastro.address
                 };
-
-                axios.post('/api/cadastro/cliente',dados)
+                const json = JSON.stringify(dados);
+                console.log(json);
+                const headers = {
+                    'Content-Type': 'application/json'
+                };
+                axios.post('http://localhost:6969/cadastro/pet', json, {headers})
                     .then(response => {
-                        console.log('Cadastro realizado com sucesso');
+                        console.log('Cadastro do petshop realizado com sucesso', response);
                     })
                     .catch(error => {
                         console.log('Ocorreu um erro ao realizar o cadastro:', error);
                     });
             }          
             else {
-                console.log("ERRO !");
+                console.log("ERRO ! senhas não batem");
             }
 
         }
@@ -81,8 +88,9 @@ export default{
                 password: "",
                 confirmPassword: "",
                 email: "",
-                cpf: "",
-                phone: ""
+                cnpj: "",
+                phone: "",
+                adress: ""
             }
         }
     },
