@@ -20,14 +20,18 @@ export default{
         enviarCadastro() {
             if (this.cadastro.password == this.cadastro.confirmPassword) {
                 const dados = {
-                    nome: this.cadastro.nome,
+                    name: this.cadastro.name,
                     password: this.cadastro.password,
                     email: this.cadastro.email,
                     cpf: this.cadastro.cpf,
                     phone: this.cadastro.phone
                 };
-
-                axios.post('/api/cadastro/cliente',dados)
+                const json = JSON.stringify(dados);
+                console.log(json);
+                const headers = {
+                    'Content-Type': 'application/json'
+                };
+                axios.post('http://localhost:6969/cadastro/cliente', json, {headers})
                     .then(response => {
                         console.log('Cadastro realizado com sucesso',response);
                     })
@@ -46,7 +50,6 @@ export default{
             cadastro: {
                 name: "",
                 password: "",
-                confirmPassword: "",
                 email: "",
                 cpf: "",
                 phone: ""

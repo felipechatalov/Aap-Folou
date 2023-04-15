@@ -1,12 +1,11 @@
 import mongoose from 'mongoose';
 
 
-
 console.log(process.env.MONGODB_ADMIN_USER)
 console.log(process.env.MONGODB_ADMIN_PSW)
 
 
-const MONGO_URI = "mongodb+srv://" + process.env.MONGODB_ADMIN_USER + ":" + process.env.MONGODB_ADMIN_PSW + "@aap-folou.a5xoyin.mongodb.net/?retryWrites=true&w=majority"
+const MONGO_URI = "mongodb+srv://" + "linas" + ":" + "aapfolou" + "@aap-folou.a5xoyin.mongodb.net/?retryWrites=true&w=majority"
 
 const connectDB = async () => {
     try {
