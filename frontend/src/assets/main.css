@@ -170,6 +170,24 @@ footer p{
   width: 100px;
 }
 
+.card{
+  color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.card div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.card-text{
+  color: #111;
+}
+
 #nav{
   background-color:#6d553c;
   border-bottom: 4px  solid #111;

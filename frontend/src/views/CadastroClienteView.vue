@@ -6,7 +6,7 @@
             <button class="submit" type="submit" @click.prevent="enviarCadastro()">Cadastrar</button>
         </form>
     </div>
-</template>c
+</template>
 
 <script>
 import axios from 'axios';

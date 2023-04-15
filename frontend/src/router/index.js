@@ -9,11 +9,17 @@ import CadastroPet from '../views/CadastroPet.vue'
 import Login from '../views/Login.vue'
 import EsqueciSenha from '../views/EsqueciSenha.vue'
 import Home from '../views/Home.vue'
+import LandingPageCliente from '../views/LandingPageCliente.vue'
 
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    {
+      path: '/inicio',
+      name: 'LandingPage',
+      component: LandingPageCliente
+    },
     {
 
       path: '/consulta/cliente',
@@ -27,7 +33,7 @@ const router = createRouter({
       component: CadastroClienteView
     },
     {
-      path: '/consulta/petshop',
+      path: '/consulta/pet',
       name: 'ConsultarPet',
       component: ConsultaPetView
     },
