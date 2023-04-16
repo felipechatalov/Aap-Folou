@@ -16,6 +16,7 @@
           <p>{{ user.phone }}</p>
         </div>
       </form>
+      <button @click.prevent="mudar_rota()">Editar</button>
     </div>
   </template>
 
@@ -33,6 +34,11 @@ export default {
     this.user = dados;
     console.log(this.user.name);
   },
+  methods:{
+    mudar_rota(){
+      this.$router.push('/editar/cliente')
+    }
+  }
 };
 </script>
 
