@@ -37,21 +37,24 @@ export default{
             this.$router.push("/cadastro/pet");
         },
         verifica_login() {
-            axios.get("/api/cliente/1")
+            axios.get("/cliente/")
                 .then(response => {
                 const aux = response;
-                return this.dados = aux;
+                this.dados = aux;
+                this.$router.push("/");  
             })
                 .catch(error => {
                 console.log("ERRO !", error);
+                location.reload();
             });
-            axios.get("/api/petshop/1")
+            axios.get("/petshop/")
                 .then(response => {
                 const aux = response;
                 return this.dados = aux;
             })
                 .catch(error => {
                 console.log("ERRO !", error);
+                location.reload();
             });
         }
     },
