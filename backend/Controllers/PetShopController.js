@@ -2,8 +2,9 @@ import PetShopModel from "../Models/PetShopModel.js"
 
 class PetShopController {
     async store(req, res){
-        const { name, email, cnpj, phone, adress } = req.body;
+        const { name, email, cnpj, phone, address } = req.body;
 
+        console.log(req.body);
         let PetShopAlreadyExists = await PetShopModel.findOne({ email: email });
         if (PetShopAlreadyExists) return res.status(400).json({ message: "Email already registered" });
 

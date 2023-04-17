@@ -181,7 +181,9 @@ footer p{
 
 .card{
   color: black;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 200px;
   flex-direction: row;
   align-items: center;
   justify-content: center;
