@@ -29,6 +29,7 @@ app.get("/", (req, res) => {
 // Client section
 app.get("/cliente/:id", ClientController.show);
 app.get("/clientes", ClientController.index);
+app.get("/login/cliente", ClientController.show);
 
 app.post("/cadastro/cliente", ClientController.store);
 
