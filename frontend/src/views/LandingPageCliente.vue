@@ -3,17 +3,17 @@
         <h1>Lojas</h1>
         <div>
             <div class = "card">
-                <div><img src="../components/icons/cliente.png" alt="cliente">
-                    <h2 class = "card-title"> {{name[0]}}</h2>
-                    <p class = "card-text"> Endereço:</p>
-                    <p class = "card-text"> Telefone:</p>
+                <div><img class = "card-icon" src="../components/icons/cachorrinho.png" alt="cliente">
+                    <h2 class = "card-title">{{ nome[0].name }}</h2>
+                    <p class = "card-text"> Endereço:{{ nome[0].address }}</p>
+                    <p class = "card-text"> Telefone:{{ nome[0].phone }}</p>
                 </div>
-                <div><img src="../components/icons/cliente.png" alt="cliente">
-                    <h2 class = "card-title">PetShop do Chatas</h2>
-                    <p class = "card-text"> Endereço: Rua dos chatos, nº 0</p>
-                    <p class = "card-text"> Telefone: (00) 00000-0000</p>
+                <div><img class = "card-icon" src="../components/icons/cute-dog.png" alt="cliente">
+                    <h2 class = "card-title">{{ nome[1].name }}</h2>
+                    <p class = "card-text"> Endereço:{{ nome[1].address }}</p>
+                    <p class = "card-text"> Telefone:{{ nome[1].phone }}</p>
                 </div>
-                <div><img src="../components/icons/cliente.png" alt="cliente">
+                <div><img class = "card-icon" src="../components/icons/cachorro-fofinho.png" alt="cliente">
                     <h2 class = "card-title">PetShop do Zé</h2>
                     <p class = "card-text"> Endereço: Rua do Zé, nº 0</p>
                     <p class = "card-text"> Telefone: (00) 00000-0000</p>
@@ -33,24 +33,24 @@ import axios from 'axios';
 export default {
     data(){
         return{
-            name: {}
+            nome: {}
         }
     },
+    beforeMount(){
+        this.pegarDados()
+    },
     methods:{
-
-        pegarDados(){
-            axios.get('/petshops')
-                .then(response =>{
-                    const aux = response
-                    const name = aux.filter(obj => obj.chave == 'name')
-                    this.name = name
-                    console.log(dados);
+        async pegarDados() {
+            axios.get('http://localhost:6969/petshops')
+                .then(response => {
+                    this.nome = response.data
+                    console.log(this.nome)
                 })
                 .catch(error => {
-                    console.log("ERRO !", error);
+                    console.log(error)
                 })
-        },
-    
+
+            }
     }    
 }    
 </script>

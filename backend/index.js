@@ -14,22 +14,17 @@ app.use(cors({
     origin: '*'
 }));
 
-
-
-
-
-
 app.get("/", (req, res) => {
     console.log("get request received");
     console.log(req.body);
     res.send("get received");
 });
 
-
 // Client section
 app.get("/cliente/:id", ClientController.show);
 app.get("/clientes", ClientController.index);
 
+app.post("/login/cliente", ClientController.show);
 app.post("/cadastro/cliente", ClientController.store);
 
 app.put("/cliente/:id", ClientController.update);

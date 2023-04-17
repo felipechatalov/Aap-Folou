@@ -23,7 +23,8 @@
 </template>
 
 <script>
-import Rodape from './Rodape.vue'
+import Rodape from './Rodape.vue';
+import axios from 'axios';
 
 export default{
     methods: {
@@ -37,25 +38,25 @@ export default{
             this.$router.push("/cadastro/pet");
         },
         verifica_login() {
-            axios.get("/cliente/")
+            const dados = {
+                email: this.login.email,
+                password: this.login.password,
+            };
+            const json = JSON.stringify(dados);
+            const headers = {
+                'Content-Type': 'application/json'
+            };
+            console.log('Dados do login:', dados);
+            console.log(json);
+            axios.post('http://localhost:6969/login/cliente', json, {headers})
                 .then(response => {
-                const aux = response;
-                this.dados = aux;
-                this.$router.push("/");  
-            })
+                    console.log('Login realizado com sucesso',response);
+                    localStorage.setItem('token', response.data.token);
+                    this.$router.push("/inicio");
+                })
                 .catch(error => {
-                console.log("ERRO !", error);
-                location.reload();
-            });
-            axios.get("/petshop/")
-                .then(response => {
-                const aux = response;
-                return this.dados = aux;
-            })
-                .catch(error => {
-                console.log("ERRO !", error);
-                location.reload();
-            });
+                    console.log('Ocorreu um erro ao realizar o login:', error);
+                });
         }
     },
     data() {
@@ -63,7 +64,8 @@ export default{
             login: {
                 email: "",
                 password: ""
-            }
+            },
+            dados: {}
         };
     },
     components: { Rodape }

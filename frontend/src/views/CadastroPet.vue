@@ -70,6 +70,7 @@ export default{
                 axios.post('http://localhost:6969/cadastro/pet', json, {headers})
                     .then(response => {
                         console.log('Cadastro do petshop realizado com sucesso', response);
+                        this.$router.push("/login");
                     })
                     .catch(error => {
                         console.log('Ocorreu um erro ao realizar o cadastro:', error);

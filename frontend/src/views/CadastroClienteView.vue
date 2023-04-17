@@ -34,6 +34,7 @@ export default{
                 axios.post('http://localhost:6969/cadastro/cliente', json, {headers})
                     .then(response => {
                         console.log('Cadastro realizado com sucesso',response);
+                        this.$router.push("/login");
                     })
                     .catch(error => {
                         console.log('Ocorreu um erro ao realizar o cadastro:', error);
