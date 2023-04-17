@@ -12,7 +12,7 @@
                 <label for="email">E-mail:</label>
                 <input type="email" v-model="cadastro.email">
                 <label for="CNPJ">CNPJ:</label>
-                <input type="text" v-model="cadastro.cpf">
+                <input type="text" v-model="cadastro.cnpj">
                 <label for="phone">Telefone:</label>
                 <input type="text" v-model="cadastro.phone">
                 <label for="address">Endereço:</label>
@@ -91,7 +91,7 @@ export default{
                 email: "",
                 cnpj: "",
                 phone: "",
-                adress: ""
+                address: ""
             }
         }
     },

@@ -14,9 +14,24 @@
                     <p class = "card-text"> Telefone:{{ nome[1].phone }}</p>
                 </div>
                 <div><img class = "card-icon" src="../components/icons/cachorro-fofinho.png" alt="cliente">
-                    <h2 class = "card-title">PetShop do Zé</h2>
-                    <p class = "card-text"> Endereço: Rua do Zé, nº 0</p>
-                    <p class = "card-text"> Telefone: (00) 00000-0000</p>
+                    <h2 class = "card-title">{{nome[2].name}}</h2>
+                    <p class = "card-text"> Endereço: {{nome[2].address}}</p>
+                    <p class = "card-text"> Telefone: {{ nome[2].phone }}</p>
+                </div>
+                <div><img class = "card-icon" src="../components/icons/cute-dog.png" alt="cliente">
+                    <h2 class = "card-title">{{nome[3].name}}</h2>
+                    <p class = "card-text"> Endereço: {{nome[3].address}}</p>
+                    <p class = "card-text"> Telefone: {{ nome[3].phone }}</p>
+                </div>
+                <div><img class = "card-icon" src="../components/icons/cachorro-fofinho.png" alt="cliente">
+                    <h2 class = "card-title">{{nome[4].name}}</h2>
+                    <p class = "card-text"> Endereço: {{nome[4].address}}</p>
+                    <p class = "card-text"> Telefone: {{ nome[4].phone }}</p>
+                </div> 
+                <div><img class = "card-icon" src="../components/icons/cachorrinho.png" alt="cliente">
+                    <h2 class = "card-title">{{nome[5].name}}</h2>
+                    <p class = "card-text"> Endereço: {{nome[5].address}}</p>
+                    <p class = "card-text"> Telefone: {{ nome[5].phone }}</p>
                 </div>
             </div>
         </div>
