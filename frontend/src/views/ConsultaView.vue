@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-      <h1>Dados do usuário</h1>
+      <h1 class="aap_folou">Dados do usuário</h1>
       <form @submit.prevent="submitForm">
         <div>
           <label for="name">Nome:</label>
@@ -14,9 +14,9 @@
           <p>{{ user.cpf }}</p>
           <label for="phone">Telefone:</label>
           <p>{{ user.phone }}</p>
+          <button @click.prevent="mudar_rota()">Editar</button>
         </div>
       </form>
-      <button @click.prevent="mudar_rota()">Editar</button>
     </div>
   </template>
 
@@ -30,9 +30,12 @@ export default {
       mostrar_senha: false
     }
   },
-  created() {
-    this.user = dados;
-    console.log(this.user.name);
+
+  mounted() {
+    const userJSON = localStorage.getItem("login");
+    const user = JSON.parse(userJSON);
+    this.user = user
+    console.log('to no consulta: ', this.user);
   },
   methods:{
     mudar_rota(){
@@ -41,4 +44,3 @@ export default {
   }
 };
 </script>
-

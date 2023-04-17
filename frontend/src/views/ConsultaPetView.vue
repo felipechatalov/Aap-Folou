@@ -1,12 +1,12 @@
 <template>
     <div>
-        <h1>Dados do Petshop</h1>
+        <h1 class="aap_folou">Dados do Petshop</h1>
         <form>
           <div>
             <label for="name">Nome:</label>
             <p>{{ user.name }}</p>
             <label for="password">Senha:</label>
-            <p v-if="mostrar_senha">{{ user.password }}</p>
+            <p v-if="mostrar_senha">{{ this.user.password }}</p>
             <p v-else>*********</p>          
             <label for="email">Email:</label>
             <p>{{ user.email }}</p>
@@ -15,8 +15,8 @@
             <label for="phone">Telefone:</label>
             <p>{{ user.phone }}</p>
           </div>
+          <button @click.prevent="mudar_rota()">Editar</button>
         </form>
-        <button @click.prevent="mudar_rota()">Editar</button>
     </div>
 </template>
 
@@ -30,9 +30,11 @@ export default {
       mostrar_senha: false
     }
   },
-  created() {
-    this.user = dados;
-    console.log(this.user.name);
+
+  beforeMount() {
+    const userJSON = localStorage.getItem("login");
+    const user = JSON.parse(userJSON);
+    this.user = user;
   },
   methods:{
     mudar_rota(){

@@ -51,7 +51,13 @@ export default{
             axios.post('http://localhost:6969/login/cliente', json, {headers})
                 .then(response => {
                     console.log('Login realizado com sucesso',response);
-                    localStorage.setItem('token', response.data.token);
+                    const dados = response.data;
+                    this.dados = dados;
+                    localStorage.setItem('login', JSON.stringify(dados));
+                    const elementoAEsconder = document.getElementById('router3');
+                    const elementoAMostrar = document.getElementById('logado');
+                    elementoAEsconder.style.display = 'none';
+                    elementoAMostrar.style.display = 'block';
                     this.$router.push("/inicio");
                 })
                 .catch(error => {

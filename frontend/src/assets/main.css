@@ -37,6 +37,7 @@ div {
 
 form {
   display: flex;
+  margin: auto;
   flex-direction: column;
   width: 300px;
 }
@@ -257,10 +258,19 @@ footer p{
   padding-bottom: 3px;
 }
 
+
+
 #router1 a:hover,
 #router2 a:hover,
 #router3 a:hover {
   text-decoration: underline;
+}
+
+#logado{
+  display: none;
+  border-radius: 80%;
+  width: 45px;
+
 }
 
 @media (min-width: 1024px) {
